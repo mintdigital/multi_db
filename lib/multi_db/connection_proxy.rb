@@ -87,6 +87,7 @@ module MultiDb
       @slaves    = Scheduler.new(slaves)
       @master    = master
       @reconnect = false
+      @config    = master.connection.instance_variable_get(:@config)
       self.current      = @slaves.current
       self.master_depth = 0
     end
